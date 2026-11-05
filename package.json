@@ -1,0 +1,56 @@
+{
+  "name": "dsh-durable-wait",
+  "version": "0.1.0",
+  "description": "DSH 持久等待插件：文件出现/修改或进程退出时，条件成立后自动叫醒原会话。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg",
+    "./core": "./lib/core.js"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "durable-wait",
+    "async",
+    "wake"
+  ],
+  "license": "MIT",
+  "author": "Yyhy110421",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yyhy110421/dsh-durable-wait.git"
+  },
+  "homepage": "https://github.com/Yyhy110421/dsh-durable-wait",
+  "bugs": {
+    "url": "https://github.com/Yyhy110421/dsh-durable-wait/issues"
+  },
+  "scripts": {
+    "test": "node test/manual.mjs && node test/plugin.mjs && node test/index.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-general"
+      ]
+    }
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}

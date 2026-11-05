@@ -1,0 +1,9 @@
+- insert:
+    - id: durable-wait
+      name: 'dsh-durable-wait'
+      config:
+        defaultTimeoutMinutes: 30
+        pollSeconds: 2
+        autoWake: true
+        maxWaits: 50
+        keepDays: 7
